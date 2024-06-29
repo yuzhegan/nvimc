@@ -180,6 +180,7 @@ M.configfunc = function()
 			end,
 		},
 		sources = cmp.config.sources({
+			{ name = "ultisnips" },
 			{ name = "nvim_lsp" },
 			{ name = "buffer" },
 		}, {

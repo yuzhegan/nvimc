@@ -1,16 +1,40 @@
 return {
 	{
-		"SirVer/ultisnips",
-		dependencies = {
-			"honza/vim-snippets",
+		{
+			"SirVer/ultisnips",
+			dependencies = {
+				"yuzhegan/vim-snippets",
+				-- branch = "master", -- 指定分支为 master
+
+			},
+			config = function()
+				vim.opt.rtp:append({ vim.fn.stdpath("data") .. "~/.local/share/nvim/lazy/vim-snippets" })
+				-- vim.g.UltiSnipsExpandTrigger = "<c-o>"
+				vim.g.UltiSnipsJumpForwardTrigger = "<c-n>"
+				vim.g.UltiSnipsJumpBackwardTrigger = "<c-i>"
+				-- vim.g.UltiSnipsListSnippets = "<Plug>(utlisnips_list_snippets)"
+				-- vim.g.UltiSnipsRemoveSelectModeMappings = 0
+				vim.g.UltiSnipsListSnippets = "<c-x><c-x>"
+				vim.g.UltiSnipsRemoveSelectModeMappings = 0
+			end,
 		},
-		config = function()
-			vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/Ultisnips" }
-			-- vim.g.UltiSnipsExpandTrigger = ""
-			-- vim.g.UltiSnipsJumpForwardTrigger = ""
-			-- vim.g.UltiSnipsJumpBackwardTrigger = ""
-		end
-	},
+	}
+
+
+
+	-- return {
+	-- 	{
+	-- 		"SirVer/ultisnips",
+	-- 		dependencies = {
+	-- 			"honza/vim-snippets",
+	-- 		},
+	-- 		config = function()
+	-- 			vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/Ultisnips" }
+	-- 			-- vim.g.UltiSnipsExpandTrigger = ""
+	-- 			-- vim.g.UltiSnipsJumpForwardTrigger = ""
+	-- 			-- vim.g.UltiSnipsJumpBackwardTrigger = ""
+	-- 		end
+	-- 	},
 	-- {
 	-- 	"L3MON4D3/LuaSnip",
 	-- 	version = "1.*",
