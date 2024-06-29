@@ -126,7 +126,6 @@ M.config = {
 			local lspconfig = require('lspconfig')
 
 			require("config.lsp.lua").setup(lspconfig, lsp)
-			require("config.lsp.python").setup(lspconfig, lsp)
 			require("config.lsp.json").setup(lspconfig, lsp)
 			require("config.lsp.flutter").setup(lsp)
 			require("config.lsp.html").setup(lspconfig, lsp)
@@ -262,7 +261,6 @@ M.config = {
 				dockerfile = true,
 				terraform = true,
 				tex = true,
-				-- python = true,
 			}
 
 			vim.api.nvim_create_autocmd("BufWritePre", {
@@ -388,7 +386,6 @@ F.configureKeybinds = function()
 			vim.keymap.set('i', '<c-f>', vim.lsp.buf.signature_help, opts)
 			vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 			vim.keymap.set({ 'n', 'x' }, '<leader>oo', function() vim.lsp.buf.format({ async = true }) end, opts)
-			-- vim.keymap.set({ 'n', 'x' }, '<leader>f', function() vim.lsp.buf.format({ async = true }) end, opts)
 			vim.keymap.set('n', '<leader>aw', vim.lsp.buf.code_action, opts)
 			vim.keymap.set('n', "<leader>,", vim.lsp.buf.code_action, opts)
 			-- vim.keymap.set('x', '<leader>aw', vim.lsp.buf.range_code_action, opts)

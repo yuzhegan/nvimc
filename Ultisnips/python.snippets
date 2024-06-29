@@ -1,6 +1,8 @@
-snippet st "print"
-print(${0})
-endsnippet
+priority -50
+
+###########################################################################
+#                            TEXTMATE SNIPPETS                            #
+###########################################################################
 
 snippet st "print"
 print(${0:}.schema)
@@ -88,9 +90,9 @@ ${4:header=${5:0}}, ${6:usecols=${7:'None'}}, ${8:skiprows=${9:0}},
 endsnippet
 
 snippet plc "pl withcolumns"
-${1:df}.with_columns([${2:pl.col('${3:column_name}').${4:cast}}.${5:alias('${6:column_name}')},
-${7:pl.col('${8:column_name}').${9:cast}}.${10:alias('${11:column_name}')},
-${12:pl.col('${13:column_name}').${14:cast}}.${15:alias('${16:column_name}')},
+${1:df}.with_columns([${2:pl.col('${3:column_name}').${4:cast(pl.Float64))}}.${5:alias('${6:column_name}')},
+${7:pl.col('${8:column_name}').${9:cast()}}.${10:alias('${11:column_name}')},
+${12:pl.col('${13:column_name}').${14:cast()}}.${15:alias('${16:column_name}')},
 ])
 endsnippet
 
