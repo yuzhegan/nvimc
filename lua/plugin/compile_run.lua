@@ -10,7 +10,7 @@ local compileRun = function()
 	if ft == "dart" then
 		vim.cmd(":FlutterRun -d " .. vim.g.flutter_default_device .. " " .. vim.g.flutter_run_args)
 	elseif ft == "markdown" then
-		vim.cmd(":InstantMarkdownPreview")
+		vim.cmd(":MarkdownPreview")
 	elseif ft == 'c' then
 		split()
 		vim.cmd("term gcc % -o %< && ./%< && rm %<")
@@ -25,6 +25,8 @@ local compileRun = function()
 	elseif ft == 'python' then
 		split()
 		vim.cmd("term python3 %")
+	elseif ft == "vimwiki" then
+		vim.cmd(":MarkdownPreview")
 	end
 end
 
