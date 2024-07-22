@@ -7,8 +7,8 @@ return {
 		config = function()
 			vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/Ultisnips" }
 			-- vim.g.UltiSnipsExpandTrigger = ""
-			-- vim.g.UltiSnipsJumpForwardTrigger = "<C-o>"
-			-- vim.g.UltiSnipsJumpBackwardTrigger = "<C-i>"
+			vim.g.UltiSnipsJumpForwardTrigger = "<C-o>"
+			vim.g.UltiSnipsJumpBackwardTrigger = "<C-i>"
 		end
 	},
 	-- {
