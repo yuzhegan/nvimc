@@ -133,3 +133,4 @@ autocmd Filetype vimwiki inoremap <buffer> -9 <Esc><S-v>c<Esc>i---------[#339933
 autocmd Filetype vimwiki inoremap <buffer> ,u <Esc><S-v>c<Esc>i@startuml<Space><Enter>@startmindmap<Space><Enter><Enter>@endmindmap<Space><Enter>@enduml<Esc>2ko
 
 
+
