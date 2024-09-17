@@ -35,7 +35,7 @@ require("lazy").setup({
 	require("config.plugins.fcitx"),
 	require("config.plugins.python"),
 	require("config.plugins.magma"),
-	require("config.plugins.avante"),
+	-- require("config.plugins.avante"),
 
 	require("config.plugins.fzf"),
 	require("config.plugins.colorscheme"),
