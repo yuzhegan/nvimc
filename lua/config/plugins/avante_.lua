@@ -6,27 +6,6 @@ return {
 			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			{
-				-- support for image pasting
-				"HakonHarnes/img-clip.nvim",
-				event = "VeryLazy",
-				opts = {
-					-- recommended settings
-					default = {
-						embed_image_as_base64 = false,
-						prompt_for_file_name = false,
-						drag_and_drop = {
-							insert_mode = true,
-						},
-						-- required for Windows users
-						use_absolute_path = true,
-					},
-				},
-				keys = {
-					{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
-				}
-
-			}
 			-- {
 			-- 	"MeanderingProgrammer/render-markdown.nvim",
 			-- 	opts = {
@@ -38,8 +17,7 @@ return {
 		event = "VeryLazy",
 		build = "make",
 		opts = {
-			-- provider = "copilot",
-			provider = "openai",
+			provider = "copilot",
 			copilot = {
 				endpoint = "https://api.githubcopilot.com",
 				model = "gpt-4o-2024-05-13",
@@ -49,17 +27,6 @@ return {
 				temperature = 0,
 				max_tokens = 4096,
 			},
-			openai = {
-				endpoint = "https://api.gpt.ge/v1",
-				model = "claude-3-5-sonnet-20240620",
-				-- model = "gpt-4o",
-				proxy = nil,        -- [protocol://]host[:port] Use this proxy
-				allow_insecure = false, -- Allow insecure server connections
-				timeout = 30000,    -- Timeout in milliseconds
-				temperature = 0,
-				max_tokens = 4096,
-			},
-
 			mappings = {
 				ask = "<leader>aa",
 				edit = "<leader>ae",
