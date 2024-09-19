@@ -22,8 +22,19 @@ return {
 						use_absolute_path = true,
 					},
 				},
+				-- keys = {
+				-- 	{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+				-- }
+				--
 				keys = {
-					{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+					{
+						"<leader>ip",
+						function()
+							return vim.bo.filetype == "AvanteInput" and require("avante.clipboard").paste_image()
+									or require("img-clip").paste_image()
+						end,
+						desc = "clip: paste image",
+					},
 				}
 
 			}
