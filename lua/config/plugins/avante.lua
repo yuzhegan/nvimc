@@ -1,6 +1,6 @@
 return {
 	{
-		"yetone/avante.nvim",
+		"yuzhegan/avante.nvim",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"stevearc/dressing.nvim",
@@ -50,7 +50,7 @@ return {
 		build = "make",
 		opts = {
 			-- provider = "copilot",
-			provider = "openai",
+			provider = "claude",
 			copilot = {
 				endpoint = "https://api.githubcopilot.com",
 				model = "gpt-4o-2024-05-13",
@@ -63,7 +63,7 @@ return {
 			openai = {
 				endpoint = "https://api.gpt.ge/v1",
 				model = "gpt-4o",
-				-- model = "gpt-4o",
+				-- model = "o1-preview",
 				proxy = nil,        -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
 				timeout = 30000,    -- Timeout in milliseconds
@@ -71,7 +71,7 @@ return {
 				max_tokens = 4096,
 			},
 
-			openai = {
+			claude = {
 				endpoint = "https://api.gpt.ge/v1",
 				model = "claude-3-5-sonnet-20240620",
 				-- model = "gpt-4o",

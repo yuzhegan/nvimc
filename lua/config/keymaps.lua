@@ -83,7 +83,9 @@ local nmappings = {
 	{ from = ",v",               to = "v%" },
 	{ from = "<leader><esc>",    to = "<nop>" },
 	{ from = "<leader><leader>", to = '<Esc>/<++><CR>:nohlsearch<CR>"_c4l' },
-	{ from = "<leader>av",       to = ':e ~/.config/nvim/lua/config/plugins/avante.lua<CR>' },
+	{ from = "<leader>so",       to = ':AvanteSwitchProvider openai<CR>' },
+	{ from = "<leader>sp",       to = ':AvanteSwitchProvider copilot<CR>' },
+	{ from = "<leader>sc",       to = ':AvanteSwitchProvider claude<CR>' },
 
 	-- Joshuto
 	{ from = "R",                to = ":Yazi<CR>" },
