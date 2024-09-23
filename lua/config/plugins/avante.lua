@@ -62,7 +62,7 @@ return {
 			},
 			openai = {
 				endpoint = "https://api.gpt.ge/v1",
-				model = "claude-3-5-sonnet-20240620",
+				model = "gpt-4o",
 				-- model = "gpt-4o",
 				proxy = nil,        -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
@@ -71,6 +71,16 @@ return {
 				max_tokens = 4096,
 			},
 
+			openai = {
+				endpoint = "https://api.gpt.ge/v1",
+				model = "claude-3-5-sonnet-20240620",
+				-- model = "gpt-4o",
+				proxy = nil,        -- [protocol://]host[:port] Use this proxy
+				allow_insecure = false, -- Allow insecure server connections
+				timeout = 30000,    -- Timeout in milliseconds
+				temperature = 0,
+				max_tokens = 4096,
+			},
 			mappings = {
 				ask = "<leader>aa",
 				edit = "<leader>ae",

@@ -83,6 +83,7 @@ local nmappings = {
 	{ from = ",v",               to = "v%" },
 	{ from = "<leader><esc>",    to = "<nop>" },
 	{ from = "<leader><leader>", to = '<Esc>/<++><CR>:nohlsearch<CR>"_c4l' },
+	{ from = "<leader>av",       to = ':e ~/.config/nvim/lua/config/plugins/avante.lua<CR>' },
 
 	-- Joshuto
 	{ from = "R",                to = ":Yazi<CR>" },
