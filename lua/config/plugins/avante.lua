@@ -25,7 +25,7 @@ return {
 				-- keys = {
 				-- 	{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
 				-- }
-				--
+
 				keys = {
 					{
 						"<leader>ip",
@@ -46,6 +46,38 @@ return {
 				ft = { "markdown", "Avante" },
 			},
 		},
+
+
+
+
+
+
+		hints = { enabled = true },
+		windows = {
+			---@type "right" | "left" | "top" | "bottom"
+			position = 'right', -- the position of the sidebar
+			wrap = true,     -- similar to vim.o.wrap
+			width = 30,      -- default % based on available width
+			sidebar_header = {
+				align = 'center', -- left, center, right for title
+				rounded = true,
+			},
+		},
+		highlights = {
+			---@type AvanteConflictHighlights
+			diff = {
+				current = 'DiffText',
+				incoming = 'DiffAdd',
+			},
+		},
+		--- @class AvanteConflictUserConfig
+		diff = {
+			autojump = true,
+			---@type string | fun(): any
+			list_opener = 'copen',
+		},
+
+		-- width
 		event = "VeryLazy",
 		build = "make",
 		opts = {
