@@ -94,8 +94,9 @@ return {
 				max_tokens = 4096,
 			},
 			openai = {
-				endpoint = "https://api.gpt.ge/v1",
-				model = "gpt-4o",
+				endpoint = "https://api.oaipro.com/v1",
+				model = "gpt-4o-2024-08-06",
+				-- model = "gpt-4-all",
 				-- model = "o1-preview",
 				proxy = nil,        -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
@@ -105,7 +106,8 @@ return {
 			},
 
 			claude = {
-				endpoint = "https://api.gpt.ge/v1",
+				-- endpoint = "https://api.gpt.ge/v1",
+				endpoint = "https://api.oaipro.com/v1",
 				model = "claude-3-5-sonnet-20240620",
 				-- model = "gpt-4o",
 				proxy = nil,        -- [protocol://]host[:port] Use this proxy
