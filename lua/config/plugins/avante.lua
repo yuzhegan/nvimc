@@ -1,3 +1,4 @@
+require("config.prompts")
 return {
 	{
 		"yuzhegan/avante.nvim",
