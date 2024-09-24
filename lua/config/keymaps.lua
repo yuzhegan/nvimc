@@ -85,7 +85,7 @@ local nmappings = {
 	{ from = "<leader><leader>", to = '<Esc>/<++><CR>:nohlsearch<CR>"_c4l' },
 	{ from = "<leader>so",       to = ':AvanteSwitchProvider openai<CR>' },
 	{ from = "<leader>sp",       to = ':AvanteSwitchProvider copilot<CR>' },
-	{ from = "<leader>sc",       to = ':AvanteSwitchProvider claude<CR>' },
+	{ from = "<leader>sl",       to = ':AvanteSwitchProvider claude<CR>' },
 
 	-- Joshuto
 	{ from = "R",                to = ":Yazi<CR>" },
