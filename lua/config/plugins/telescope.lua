@@ -36,7 +36,7 @@ M.config = {
 
 			vim.keymap.set('n', '<leader>d', function()
 				builtin.diagnostics({
-					severity_sort = true,
+					sort_by = "severity"
 				})
 			end, m)
 			-- vim.keymap.set('n', 'gd', builtin.lsp_definitions, m)
@@ -51,6 +51,12 @@ M.config = {
 			M.ts = ts
 			ts.setup({
 				defaults = {
+					file_ignore_patterns = {
+						"node_modules",
+						"build",
+						"dist",
+						"%.pub%-cache",
+					},
 					vimgrep_arguments = {
 						"rg",
 						"--color=never",

@@ -4,19 +4,46 @@ return {
 		config = function()
 			require('gitsigns').setup({
 				signs = {
-					add          = { hl = 'GitSignsAdd', text = '▎', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-					change       = { hl = 'GitSignsChange', text = '░', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
-					delete       = { hl = 'GitSignsDelete', text = '_', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-					topdelete    = { hl = 'GitSignsDelete', text = '▔', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-					changedelete = { hl = 'GitSignsChange', text = '▒', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
-					untracked    = { hl = 'GitSignsAdd', text = '┆', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
+					add          = { text = '▎' },
+					change       = { text = '░' },
+					delete       = { text = '_' },
+					topdelete    = { text = '▔' },
+					changedelete = { text = '▒' },
+					untracked    = { text = '┆' },
 				},
+				on_attach = function(bufnr)
+					local gs = package.loaded.gitsigns
+
+					-- Navigation
+					vim.keymap.set('n', ']c', function()
+						if vim.wo.diff then return ']c' end
+						vim.schedule(function() gs.next_hunk() end)
+						return '<Ignore>'
+					end, { buffer = bufnr, expr = true })
+
+					vim.keymap.set('n', '[c', function()
+						if vim.wo.diff then return '[c' end
+						vim.schedule(function() gs.prev_hunk() end)
+						return '<Ignore>'
+					end, { buffer = bufnr, expr = true })
+
+					-- Actions
+					vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>', { buffer = bufnr })
+					vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>', { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hS', gs.stage_buffer, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hR', gs.reset_buffer, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hp', gs.preview_hunk, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hb', function() gs.blame_line { full = true } end, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>tb', gs.toggle_current_line_blame, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hd', gs.diffthis, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>hD', function() gs.diffthis('~') end, { buffer = bufnr })
+					vim.keymap.set('n', '<leader>td', gs.toggle_deleted, { buffer = bufnr })
+
+					-- Text object
+					vim.keymap.set({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { buffer = bufnr })
+				end
 			})
-			vim.keymap.set("n", "<leader>g-", ":Gitsigns prev_hunk<CR>", { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>g=", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>", { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = true })
-			vim.keymap.set("n", "H", ":Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
 		end
 	},
 	{
@@ -29,11 +56,4 @@ return {
 			vim.keymap.set("n", "<c-g>", ":LazyGit<CR>", { noremap = true, silent = true })
 		end
 	},
-	-- {
-	-- 	"APZelos/blamer.nvim",
-	-- 	config = function()
-	-- 		vim.g.blamer_enabled = true
-	-- 		vim.g.blamer_relative_time = true
-	-- 	end
-	-- }
 }
