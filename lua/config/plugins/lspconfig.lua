@@ -11,7 +11,7 @@ M.config = {
 	},
 	{
 		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
+		branch = 'v3.x',
 		dependencies = {
 			{
 				"folke/trouble.nvim",
@@ -55,7 +55,8 @@ M.config = {
 			M.lsp = lsp
 
 			lsp.ensure_installed({
-				'tsserver',
+				-- 'tsserver',
+				'ts_ls',
 				'eslint',
 				'gopls',
 				'jsonls',

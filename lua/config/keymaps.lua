@@ -86,6 +86,7 @@ local nmappings = {
 	{ from = "<leader>so",       to = ':AvanteSwitchProvider openai<CR>' },
 	{ from = "<leader>sp",       to = ':AvanteSwitchProvider copilot<CR>' },
 	{ from = "<leader>sl",       to = ':AvanteSwitchProvider claude<CR>' },
+	{ from = "<leader>\\",       to = ':g/^\\s*$/d<CR>' },
 
 	-- Joshuto
 	{ from = "R",                to = ":Yazi<CR>" },
@@ -93,6 +94,9 @@ local nmappings = {
 
 vim.keymap.set("n", "q", "<nop>", { noremap = true })
 vim.keymap.set("n", ",q", "q", { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-S-v>', '"+p', { noremap = true, silent = true })
+
+
 
 for _, mapping in ipairs(nmappings) do
 	vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, { noremap = true })

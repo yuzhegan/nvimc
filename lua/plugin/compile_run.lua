@@ -27,6 +27,9 @@ local compileRun = function()
 		vim.cmd("term python3 %")
 	elseif ft == "vimwiki" then
 		vim.cmd(":MarkdownPreview")
+	elseif ft == 'go' then
+		split()
+		vim.cmd(":term go run %")
 	end
 end
 
