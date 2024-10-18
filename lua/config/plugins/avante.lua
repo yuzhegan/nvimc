@@ -1,7 +1,7 @@
 require("config.prompts")
 return {
 	{
-		"yuzhegan/avante.nvim",
+		"yetone/avante.nvim",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"stevearc/dressing.nvim",
